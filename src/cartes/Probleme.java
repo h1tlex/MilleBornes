@@ -2,11 +2,12 @@ package cartes;
 
 public abstract class Probleme extends Carte {
 	
-	private static String name;
+	private Carte carte;
+	private int nbExemplaires;
 	Type type;
 
-	public Probleme(Type type) {
-		super(name);
+	public Probleme(Carte carte, int nbExemplaires, Type type) {
+		super(carte, nbExemplaires);
 		this.type = type;
 	}
 	
@@ -16,7 +17,7 @@ public abstract class Probleme extends Carte {
 	
 	@Override
 	public String toString() {
-		return name;
+		return carte.toString();
 	}
 
 }

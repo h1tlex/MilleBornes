@@ -6,7 +6,7 @@ public class Configuration extends JeuDeCartes {
 	public int nbExemplaires;
 	public Carte carte;
 
-	private Configuration(Carte carte, int nbExmplaires) {
+	public Configuration(Carte carte, int nbExemplaires) {
 		this.carte = carte;
 		this.nbExemplaires = nbExemplaires;
 	}

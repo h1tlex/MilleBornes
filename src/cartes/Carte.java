@@ -2,10 +2,11 @@ package cartes;
 
 public abstract class Carte extends Configuration {
 	
-	String name;
+	private Carte carte;
+	private int nbExemplaires;
 	
-	public Carte(String name) {
-		this.name = name;
+	public Carte(Carte carte, int nbExemplaires) {
+		super(carte, nbExemplaires);
 	}
 	
 
