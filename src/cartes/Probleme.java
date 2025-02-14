@@ -6,8 +6,7 @@ public abstract class Probleme extends Carte {
 	private int nbExemplaires;
 	Type type;
 
-	public Probleme(Carte carte, int nbExemplaires, Type type) {
-		super(carte, nbExemplaires);
+	public Probleme(Type type) {
 		this.type = type;
 	}
 	

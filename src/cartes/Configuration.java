@@ -1,12 +1,14 @@
 package cartes;
 
 // private class?
-public class Configuration extends JeuDeCartes {
+public class Configuration extends Carte {
 	
 	public int nbExemplaires;
 	public Carte carte;
-
-	public Configuration(Carte carte, int nbExemplaires) {
+	public String name;
+	
+	public Configuration(Carte carte, int nbExemplaires, String name) {
+		super(name);
 		this.carte = carte;
 		this.nbExemplaires = nbExemplaires;
 	}
