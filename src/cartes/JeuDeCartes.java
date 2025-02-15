@@ -16,7 +16,7 @@ public class JeuDeCartes {
 		}
 	}
 	
-	public Carte[] donnerCartes() { // Not sure about this
+	public Carte[] donnerCartes() {
 		int index = 0;
 		Carte[] cartes = new Carte[maxCartes];
 		
@@ -28,4 +28,25 @@ public class JeuDeCartes {
 		}
 		return cartes;
 	}
+	
+	private static class Configuration extends Carte {
+		
+		public int nbExemplaires;
+		public Carte carte;
+		
+		public Configuration(Carte carte, int nbExemplaires) {
+			this.carte = carte;
+			this.nbExemplaires = nbExemplaires;
+		}
+		
+		public Carte getCarte() {
+			return carte; 
+		}
+		
+		public int getNbExemplaires() {
+			return nbExemplaires;
+		}
+
+	}
+
 }
