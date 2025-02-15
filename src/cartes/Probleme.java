@@ -3,7 +3,6 @@ package cartes;
 public abstract class Probleme extends Carte {
 	
 	private Carte carte;
-	private int nbExemplaires;
 	Type type;
 
 	public Probleme(Type type) {
