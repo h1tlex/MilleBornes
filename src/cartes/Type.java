@@ -2,9 +2,12 @@ package cartes;
 
 public enum Type {
 	FEU("Feu Rouge", "Feu Vert", "Prioritaire"),
-	ESSENCE("", "", ""),
-	CREVAISON("", "", ""),
-	ACCIDENT("", "", "");
+	ESSENCE("Panne d'essence", "Réservoir plein", "Citerne d'essence"),
+	CREVAISON("Crevaison", "Roue de secours", "Increvable"),
+	ACCIDENT("Accident", "Répartitions", "As du volant"),
+	LIMITE("Limite de Vitesse", "Fin de Limite", null), // pas de botte
+	VEHICULE_PRIORITAIRE(null, null, "Véhicule Prioritaire"); // Botte spécifique
+
 	
 	
 	private String attaque;

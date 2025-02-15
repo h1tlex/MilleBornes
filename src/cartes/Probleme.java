@@ -15,7 +15,7 @@ public abstract class Probleme extends Carte {
 	
 	@Override
 	public String toString() {
-		return carte.toString();
+		return type.toString();
 	}
 
 }

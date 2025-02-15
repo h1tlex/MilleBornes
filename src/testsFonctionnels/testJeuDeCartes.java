@@ -8,10 +8,9 @@ public class testJeuDeCartes {
 	
 
 	public static void main(String[] args) {
-		System.out.println("Hello, World!");
 		JeuDeCartes jeu = new JeuDeCartes();
 		
-		jeu.afficherJeuDeCartes();
+		System.out.println(jeu.afficherJeuDeCartes());
 		Carte cartes[] = jeu.donnerCartes();
 		
 		for (int i = 0; i < cartes.length; i++) {
