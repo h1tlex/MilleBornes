@@ -16,6 +16,8 @@ public class testJeuDeCartes {
 		for (int i = 0; i < cartes.length; i++) {
 			System.out.println(cartes[i]);
 		}
+		
+		System.out.println(jeu.checkCount()); // true
 	}
 
 }

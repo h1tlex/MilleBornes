@@ -1,6 +1,7 @@
 package cartes;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class JeuDeCartes {
@@ -61,6 +62,24 @@ public class JeuDeCartes {
 		
 		// Convertir la liste en tableau et la renvoyer
 		return toutesLesCartes.toArray(new Carte[0]);
+	}
+	
+	public boolean checkCount() {
+		Carte[] toutesLesCartes = donnerCartes();
+		for (Configuration config : cartesInGame) {
+			int count = 0;
+			for (Carte carte : toutesLesCartes) {
+				if (carte.equals(config.getCarte())) {
+					count++;
+				}
+			}
+			if (count != config.nbExemplaires) {
+                System.out.println("Erreur : " + config.getCarte() + " attendue " + config.nbExemplaires + " fois, trouvée " + count + " fois.");
+				return false;
+			}
+		}
+		return true;
+		
 	}
 	
 	private static class Configuration extends Carte {
