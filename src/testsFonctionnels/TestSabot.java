@@ -2,8 +2,6 @@ package testsFonctionnels;
 
 import cartes.*;
 import jeu.Sabot;
-import jeu.Sabot.SabotIterator;
-
 import java.util.ConcurrentModificationException;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
@@ -21,7 +19,7 @@ public class TestSabot {
         };
         
 		Sabot sabot = new Sabot(cartes);
-		
+        Iterator<Carte> it = sabot.iterator();
 		
 		/*
 		try {
@@ -46,9 +44,6 @@ public class TestSabot {
         */
 		
 		
-        // reset
-        SabotIterator it = (SabotIterator)sabot.iterator();
-        sabot = new Sabot(cartes);
         
         try {
         	//Carte premierCarte = sabot.piocher(); // piocher avant la boucle

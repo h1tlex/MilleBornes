@@ -55,7 +55,7 @@ public class Sabot implements Iterable<Carte>{
 	
 	
     // Classe interne pour gérer l'itération et la suppression de cartes
-    public class SabotIterator implements Iterator<Carte> {
+    private class SabotIterator implements Iterator<Carte> {
     	
     	private int cursor; // Position actuelle de l'itérateur
         private int expectedModCount; // Pour gérer les modifications concurrentes

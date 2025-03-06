@@ -11,5 +11,14 @@ public abstract class Carte {
 		this.type = type;
 	}	
 	
+	@Override
+	public boolean equals(Object obj) {
+		if(getClass() == obj.getClass()) {
+			Carte carte = (Carte) obj;
+			return type.equals(carte.getType());
+		}
+		return false;
+	}
+	
 	
 }
