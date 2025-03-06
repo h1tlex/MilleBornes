@@ -1,12 +1,11 @@
 package jeu;
 
-import java.util.ConcurrentModificationException;	//TODO
-import java.util.NoSuchElementException;
-
-import javax.swing.text.html.HTMLDocument.Iterator;
-
 import cartes.Carte;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+import java.util.ConcurrentModificationException;
 
+	
 public class Sabot implements Iterable<Carte>{
 	
 	private Carte[] cartes;
@@ -56,7 +55,8 @@ public class Sabot implements Iterable<Carte>{
 	
 	
     // Classe interne pour gérer l'itération et la suppression de cartes
-    private class SabotIterator implements Iterator<Carte> {
+    public class SabotIterator implements Iterator<Carte> {
+    	
     	private int cursor; // Position actuelle de l'itérateur
         private int expectedModCount; // Pour gérer les modifications concurrentes
 
@@ -79,7 +79,9 @@ public class Sabot implements Iterable<Carte>{
         	if (!hasNext()) {
 				throw new NoSuchElementException();
 			}
-        	return cartes[cursor++];
+        	Carte carte = cartes[cursor];
+        	cursor++;
+        	return carte;
         }
         
         @Override
