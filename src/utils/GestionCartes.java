@@ -44,12 +44,19 @@ public class GestionCartes {
 		return true;
 	}
 	
-	//TODO FIGURE THIS SHIT OUT
-	public static <T> List<T> rassembler(List<T> array) {
-		List<T> newArray = new ArrayList<>();
+	public static <T> List<T> rassembler(List<T> array) {		
+		List<T> finalArray = new ArrayList<>(); // return
 		for (int i = 0; i < array.size(); i++) {
-			array.addAll(i,newArray);
+			T elem = array.get(i); 
+			List<T> subArray = array.subList(i, array.size());
+			// search for elem in sublist if exist
+			for (int j = 0; j < subArray.size(); j++) {
+				if (subArray.get(j).equals(elem)) {
+					finalArray.add(elem);
+					array.remove(elem);
+				}
+			}
 		}
-		return newArray;
+		return finalArray;
 	}
 }
