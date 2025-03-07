@@ -3,9 +3,11 @@ package utils;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
+import java.util.Set;
 
 public class GestionCartes {
 
@@ -45,18 +47,19 @@ public class GestionCartes {
 	}
 	
 	public static <T> List<T> rassembler(List<T> array) {		
-		List<T> finalArray = new ArrayList<>(); // return
-		for (int i = 0; i < array.size(); i++) {
-			T elem = array.get(i); 
-			List<T> subArray = array.subList(i, array.size());
-			// search for elem in sublist if exist
-			for (int j = 0; j < subArray.size(); j++) {
-				if (subArray.get(j).equals(elem)) {
-					finalArray.add(elem);
-					array.remove(elem);
-				}
-			}
-		}
-		return finalArray;
-	}
+        List<T> finalArray = new ArrayList<>(); 
+        Set<T> seenElements = new HashSet<>(); // Track processed elements
+        
+        for (T elem : array) {
+            if (!seenElements.contains(elem)) { // Process each element only once
+                seenElements.add(elem);
+                for (T e : array) {
+                    if (e.equals(elem)) {
+                        finalArray.add(e);
+                    }
+                }
+            }
+        }
+        return finalArray;
+    }
 }
