@@ -1,9 +1,16 @@
 package cartes;
 
 public class Botte extends Probleme {
+	
+	private String nom;
 
-	public Botte(Type type) {
+	public Botte(String nom, Type type) {
 		super(type);
+		this.nom = nom;
+	}
+	
+	public String getNom() {
+		return nom;
 	}
 	
 	@Override

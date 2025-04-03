@@ -13,9 +13,9 @@ public class TestSabot {
         Carte[] cartes = {
             new Borne(25),
             new Borne(50), 
-            new Attaque(Type.FEU), 
-            new Parade(Type.ESSENCE),
-            new Botte(Type.CREVAISON)
+            new Attaque(null, Type.FEU), 
+            new Parade(null, Type.ESSENCE),
+            new Botte(null, Type.CREVAISON)
         };
         
 		Sabot sabot = new Sabot(cartes);

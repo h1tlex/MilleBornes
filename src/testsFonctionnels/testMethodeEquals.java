@@ -10,16 +10,16 @@ public class testMethodeEquals {
 		Borne carte2 = new Borne(50);
 		Borne carte3 = new Borne(25);
 		// b
-		Attaque carte4 = new Attaque(Type.FEU);
-		Attaque carte5 = new Attaque(Type.ACCIDENT);
-		Attaque carte6 = new Attaque(Type.FEU);
+		Attaque carte4 = new Attaque(null, Type.FEU);
+		Attaque carte5 = new Attaque(null, Type.ACCIDENT);
+		Attaque carte6 = new Attaque(null, Type.FEU);
 		
-		Botte carte7 = new Botte(Type.LIMITE);
-		Botte carte8 = new Botte(Type.LIMITE);
-		Botte carte9 = new Botte(Type.FEU);
+		Botte carte7 = new Botte(null, Type.LIMITE);
+		Botte carte8 = new Botte(null, Type.LIMITE);
+		Botte carte9 = new Botte(null, Type.FEU);
 		// c
-	    Attaque feuRouge = new Attaque(Type.FEU);
-	    Parade feuVert = new Parade(Type.FEU);  // Feu Vert
+	    Attaque feuRouge = new Attaque(null, Type.FEU);
+	    Parade feuVert = new Parade(null, Type.FEU);  // Feu Vert
 
 		System.out.println("Comparing same Borne 50 : " + carte1.equals(carte2)); // true
 		System.out.println("Comparing Borne 50 & Borne 25 : " + carte1.equals(carte3)); // false

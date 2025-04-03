@@ -19,20 +19,20 @@ public class JeuDeCartes {
 		 			new Configuration(new Borne(75),10),
 		 			new Configuration(new Borne(100),12),
 		 			new Configuration(new Borne(200),4),
-		 			new Configuration(new Parade(Type.FEU),14),
+		 			new Configuration(new Parade(null, Type.FEU),14),
 		 			new Configuration(new FinLimite(Type.LIMITE),6),
-		 			new Configuration(new Parade(Type.ESSENCE),6),
-	                new Configuration(new Parade(Type.CREVAISON), 6), // Roue de secours
-	                new Configuration(new Parade(Type.ACCIDENT), 6), // Réparation
-	                new Configuration(new Attaque(Type.FEU), 5), // Feu Rouge
-	                new Configuration(new Attaque(Type.LIMITE), 4), // Limite 50
-	                new Configuration(new Attaque(Type.ESSENCE), 3), // Panne d'essence
-	                new Configuration(new Attaque(Type.CREVAISON), 3), // Crevaison
-	                new Configuration(new Attaque(Type.ACCIDENT), 3), // Accident
-	                new Configuration(new Botte(Type.ESSENCE), 1), // Citerne
-	                new Configuration(new Botte(Type.CREVAISON), 1), // Increvable
-	                new Configuration(new Botte(Type.ACCIDENT), 1), // As du Volant
-	                new Configuration(new Botte(Type.VEHICULE_PRIORITAIRE), 1) // Véhicule Prioritaire
+		 			new Configuration(new Parade(null, Type.ESSENCE),6),
+	                new Configuration(new Parade(null, Type.CREVAISON), 6), // Roue de secours
+	                new Configuration(new Parade(null, Type.ACCIDENT), 6), // Réparation
+	                new Configuration(new Attaque(null, Type.FEU), 5), // Feu Rouge
+	                new Configuration(new Attaque(null, Type.LIMITE), 4), // Limite 50
+	                new Configuration(new Attaque(null, Type.ESSENCE), 3), // Panne d'essence
+	                new Configuration(new Attaque(null, Type.CREVAISON), 3), // Crevaison
+	                new Configuration(new Attaque(null, Type.ACCIDENT), 3), // Accident
+	                new Configuration(new Botte(null, Type.ESSENCE), 1), // Citerne
+	                new Configuration(new Botte(null, Type.CREVAISON), 1), // Increvable
+	                new Configuration(new Botte(null, Type.ACCIDENT), 1), // As du Volant
+	                new Configuration(new Botte(null, Type.VEHICULE_PRIORITAIRE), 1) // Véhicule Prioritaire
 	       };
 	  }
 	 
