@@ -8,24 +8,18 @@ import cartes.*;
 
 public class ZoneDeJeu {
 	
-    private List<Limite> pileLimites;
-    private List<Limite> pileFinLimites;
-    private List<Bataille> pileBataille;
-    private Collection<Borne> collectionBorne;
+    private List<Carte> pileLimites;
+    private List<Carte> pileBataille;
+    private Collection<Carte> collectionBorne;
 	
 	public ZoneDeJeu() {
 		this.pileBataille = new ArrayList<>();
 		this.pileLimites = new ArrayList<>();
-		this.pileFinLimites = new ArrayList<>();
 		this.collectionBorne = new ArrayList<>();
 	}
 	
 	public void addCarteLimite(Limite carte){
 		pileLimites.add(carte);
-	}
-	
-	public void addCarteFinLimite(Limite carte){
-		pileFinLimites.add(carte);
 	}
 
 	public void addCarteBattaille(Bataille carte){
@@ -43,14 +37,14 @@ public class ZoneDeJeu {
 		if (stack.isEmpty()) {
 			throw new ArrayIndexOutOfBoundsException();
 		}
-		return stack.get(stack.size());
+		return stack.get(stack.size()-1);
 	}
 	
 	public List<? extends Carte> popCartePile(List<? extends Carte> stack){
 		if (stack.isEmpty()) {
 			throw new ArrayIndexOutOfBoundsException();
 		}
-		stack.remove(stack.size());
+		stack.remove(stack.size()-1);
 		return stack;
 	} 
 	
@@ -65,7 +59,7 @@ public class ZoneDeJeu {
         if (sommet instanceof FinLimite) {
 			return 200; // Fin de limitation
 		}
-		return 50; // limite à 50
+		return 50; // limite vitesse à 50
 	}
 	
 	public int donnerKmParcourus() {
@@ -80,15 +74,17 @@ public class ZoneDeJeu {
 	}
 	
 	public void deposer(Carte carte) {
-		if (carte instanceof Borne) {
-			collectionBorne.add((Borne) carte);
-		} 
-		else if (carte instanceof DebutLimite || carte instanceof FinLimite) {
-			pileLimites.add((Limite) carte);
-		}
-		else if(carte instanceof Bataille) {
-			pileBataille.add((Bataille) carte);
-		}
+	    
+        if (carte instanceof Borne) {
+            collectionBorne.add(carte);
+        } 
+        else if (carte instanceof Limite) {
+            pileLimites.add(carte);
+        }
+        else if (carte instanceof Bataille) {
+            pileBataille.add(carte);
+        }
+	    
 	}
 	
 	public boolean peutAvancer() {
@@ -101,11 +97,7 @@ public class ZoneDeJeu {
 		    Carte sommet = pileBataille.get(pileBataille.size() - 1);
 
 		    // Vérifie si le sommet est un Feu Vert en utilisant la constante de l'interface Cartes
-		    if (sommet.equals(Cartes.FEU_VERT)) {
-		        return true;
-		    }
-
-		    return false;
+		    return sommet.equals(Cartes.FEU_VERT);
 	}
 	
 	 public boolean estDepotFeuVertAutorise() {
@@ -161,7 +153,7 @@ public class ZoneDeJeu {
 	 public boolean estDepotBatailleAutorise(Bataille bataille) {
 		  // Si c'est une attaque, on vérifie que le joueur n'est pas bloqué
 		    if (bataille instanceof Attaque) {
-		        return !peutAvancer();
+		        return peutAvancer();
 		    }
 
 		    // Si c'est une parade
@@ -188,16 +180,19 @@ public class ZoneDeJeu {
 	 public boolean estDepotAutorise(Carte carte) {
 		    // Si la carte est une borne
 		    if (carte instanceof Borne) {
+		    	System.out.println("i am Borne !!!!!!!!!!!!!!!!!!!!!!!!!\n");
 		        return estDepotBorneAutorise((Borne) carte);
 		    }
 
 		    // Si la carte est une limite
 		    if (carte instanceof Limite) {
+		    	System.out.println("i am limite !!!!!!!!!!!!!!!!!!!!!!!!!\n");
 		        return estDepotLimiteAutorise((Limite) carte);
 		    }
 
 		    // Si la carte est une bataille
 		    if (carte instanceof Bataille) {
+		    	System.out.println("i am bataille !!!!!!!!!!!!!!!!!!!!!!!!!\n");
 		        return estDepotBatailleAutorise((Bataille) carte);
 		    }
 

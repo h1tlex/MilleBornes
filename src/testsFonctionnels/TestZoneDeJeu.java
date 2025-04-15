@@ -38,7 +38,7 @@ public class TestZoneDeJeu {
         System.out.println("Limite : " + joueur.getZoneDeJeu().donnerLimitationVitesse()); // Doit afficher 200
 		
         
-     // TP3 PARTIE 3
+		// TP3 PARTIE 3
 		boolean depotOK = false;
 		ZoneDeJeu zoneDeJeu = new ZoneDeJeu();
 		// Feu rouge
@@ -51,10 +51,10 @@ public class TestZoneDeJeu {
 		System.out.println("peut avancer ? " + zoneDeJeu.peutAvancer());
 		// accident
 		System.out.println("Deposer carte attaque - accident");
-		depotOK = zoneDeJeu.estDepotAutorise(new Attaque(null, Type.ACCIDENT));
+		depotOK = zoneDeJeu.estDepotAutorise(new Attaque(Type.ACCIDENT));
 		System.out.println("d�p�t ok ? " + depotOK);
 		if (depotOK) {
-			zoneDeJeu.deposer(new Attaque(null, Type.ACCIDENT));
+			zoneDeJeu.deposer(new Attaque(Type.ACCIDENT));
 		}
 		System.out.println("peut avancer ? " + zoneDeJeu.peutAvancer());
 		// Feu vert
@@ -67,25 +67,25 @@ public class TestZoneDeJeu {
 		System.out.println("peut avancer ? " + zoneDeJeu.peutAvancer());
 		// panne d'essence
 		System.out.println("Deposer carte attaque - essence");
-		depotOK = zoneDeJeu.estDepotAutorise(new Attaque(null, Type.ESSENCE));
+		depotOK = zoneDeJeu.estDepotAutorise(new Attaque(Type.ESSENCE));
 		System.out.println("d�p�t ok ? " + depotOK);
 		if (depotOK) {
-			zoneDeJeu.deposer(new Attaque(null, Type.ESSENCE));
+			zoneDeJeu.deposer(new Attaque(Type.ESSENCE));
 		}
 		System.out.println("peut avancer ? " + zoneDeJeu.peutAvancer());
 		// roue de secours
 		System.out.println("Deposer carte parade - roue de secours");
-		depotOK = zoneDeJeu.estDepotAutorise(new Parade(null, Type.CREVAISON));
+		depotOK = zoneDeJeu.estDepotAutorise(new Parade(Type.CREVAISON));
 		if (depotOK) {
-			zoneDeJeu.deposer(new Parade(null, Type.CREVAISON));
+			zoneDeJeu.deposer(new Parade(Type.CREVAISON));
 		}
 		System.out.println("d�p�t ok ? " + depotOK);
 		System.out.println("peut avancer ? " + zoneDeJeu.peutAvancer());
 		// bidon d'essence
 		System.out.println("Deposer carte parade - essence");
-		depotOK = zoneDeJeu.estDepotAutorise(new Parade(null, Type.ESSENCE));
+		depotOK = zoneDeJeu.estDepotAutorise(new Parade(Type.ESSENCE));
 		if (depotOK) {
-			zoneDeJeu.deposer(new Parade(null, Type.ESSENCE));
+			zoneDeJeu.deposer(new Parade(Type.ESSENCE));
 		}
 		System.out.println("d�p�t ok ? " + depotOK);
 		System.out.println("peut avancer ? " + zoneDeJeu.peutAvancer());
@@ -150,39 +150,51 @@ public class TestZoneDeJeu {
 // 			Deposer carte Feu rouge
 //			d�p�t ok ? false
 //			peut avancer ? false
+		
 //			Deposer carte attaque - accident
 //			d�p�t ok ? false
 //			peut avancer ? false
+		
 //			Deposer carte Feu vert
 //			d�p�t ok ? true
 //			peut avancer ? true
-//			Deposer carte attaque - essence
-//			d�p�t ok ? true
-//			peut avancer ? false
-//			Deposer carte parade - roue de secours
-//			d�p�t ok ? false
-//			peut avancer ? false
-//			Deposer carte parade - essence
-//			d�p�t ok ? true
-//			peut avancer ? false
-//			Deposer carte Feu vert
-//			d�p�t ok ? true
-//			peut avancer ? true
+		
+														//			Deposer carte attaque - essence 
+														//			d�p�t ok ? true 
+														//			peut avancer ? false 
+		
+														//			Deposer carte parade - roue de secours
+														//			d�p�t ok ? false 
+														//			peut avancer ? false 
+		
+														//			Deposer carte parade - essence
+														//			d�p�t ok ? true  
+														//			peut avancer ? false 
+		
+														//			Deposer carte Feu vert
+														//			d�p�t ok ? true 
+														//			peut avancer ? true
+		
 //			Deposer carte borne - 100
 //			d�p�t ok ? true
 //			peut avancer ? true
+		
 //			Deposer carte limite - 50
 //			d�p�t ok ? true
 //			peut avancer ? true
+		
 //			Deposer carte borne - 100
 //			d�p�t ok ? false
 //			peut avancer ? true
+		
 //			Deposer carte borne - 25
 //			d�p�t ok ? true
 //			peut avancer ? true
+		
 //			Deposer carte fin limite - 50
 //			d�p�t ok ? true
 //			peut avancer ? true
+		
 //			Deposer carte borne - 100
 //			d�p�t ok ? true
 //			peut avancer ? true
